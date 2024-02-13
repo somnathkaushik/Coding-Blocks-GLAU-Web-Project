@@ -298,6 +298,7 @@
     z-index: 9;
     animation: rotateShape 10s infinite linear;
     transition: width .5s, height .5s;
+    margin-top: -2rem;
   }
   @keyframes rotateShape {
     0% {

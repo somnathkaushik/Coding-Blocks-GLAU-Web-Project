@@ -9,7 +9,11 @@ body {
     width: 100%;
     background-color: #ffff;
     margin: 0;
+    
   }
 c{
     color: #ff0000;
+}
+d{
+    color :rgb(0, 0, 0);
 }
