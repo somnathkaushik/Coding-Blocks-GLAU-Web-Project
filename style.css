@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+    margin: 0 0;
+}
+
 body {
     position: relative;
     cursor: none;
@@ -10,7 +14,8 @@ body {
     background-color: #ffff;
     margin: 0;
     
-  }
+}
+
 c{
     color: #ff0000;
 }

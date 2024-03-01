@@ -1,3 +1,44 @@
-.ResourceOne{
+
+
+
+
+
+.HeroOne{
     margin-top: -65rem;
+}
+
+*{
+    margin: 0 0;
+    
+}
+
+body {
+    position: relative;
+    cursor: none;
+    height: 100%;
+    width: 100%;
+    /* overflow-wrap: normal; */
+    
+  }
+
+/* .hidden { */
+    /* opacity: 0; */
+    /* pointer-events: none; */
+/* } */
+ /* Additional custom styles */
+ .language {
+    cursor: pointer;
+}
+
+.notes-popup {
+    display: none;
+}
+
+.pdf-viewer {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.close-btn {
+    cursor: pointer;
 }

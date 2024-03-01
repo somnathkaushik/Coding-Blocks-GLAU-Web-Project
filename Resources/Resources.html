@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Adding Logo to web page  -->
     <link rel="icon" href="../Images/cbLogo.png">
-    <!-- Adding Logo to web page  -->
-    <link rel="icon" href="../Images/cbLogo.png">
+
     <!-- Linking Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
     <!-- Linking other css files -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="Resources.css">
@@ -17,13 +17,15 @@
     <link rel="stylesheet" href="../Components/Banner.css">
     <link rel="stylesheet" href="../Components/Footer.css">
     <link rel="stylesheet" href="../Components/Cursor.css">
+
+
     <title>Coding Blocks GLAU</title>
 </head>
 
-<body class="">
+<body class="bg-red-100 ">
     <!-- Navbar -->
-    <nav class="bg-red-600 p-4">
-        <div class="container mx-auto flex justify-between items-center">
+    <nav class="bg-red-600 p-4 ">
+        <div class="container mx-auto flex justify-between items-center ">
             <!-- Logo -->
             <a href="#" class="flex items-center text-white text-xl font-bold">
                 <img src="data:image/png;base64,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"
@@ -51,8 +53,9 @@
                 <li><a href="#" class="nav-link text-white hover:text-gray-300">Courses</a></li>
                 <li><a href="#" class="nav-link text-white hover:text-gray-300">Resources</a></li>
                 <li><a href="../Contact/Contact.html" class="nav-link text-white hover:text-gray-300">Contact</a></li>
-                <li><a href="../Placements/Placement_index.html"
-                        class="nav-link text-white hover:text-gray-300">Placements</a></li>
+                <li><a href="../Placements/Placement_index.html" class="nav-link text-white hover:text-gray-300">Placements</a></li>
+                <li><a href="/Code Compiler/CodeCompiler.html" class="nav-link text-white hover:text-gray-300">Compiler</a></li>
+                
             </ul>
         </div>
     </nav>
@@ -65,7 +68,8 @@
             <li><a href="#" class="block text-white py-2">Courses</a></li>
             <li><a href="#" class="block text-white py-2">Resources</a></li>
             <li><a href="#" class="block text-white py-2">Contact</a></li>
-            <li><a href="../Placements/Placement_index.html" class="block text-white py-2">Super 150 Placements</a></li>
+            <li><a href="../Placements/Placement_index.html" class="block text-white py-2">Placements</a></li>
+            <li><a href="/Code Compiler/CodeCompiler.html" class="block text-white py-2">Compiler</a></li>
         </ul>
     </div>
 
@@ -131,9 +135,193 @@
 
 
 
+
+    <!-- -----------------------------HERO 1------------------------------------------ -->
+    <section class="HeroOne text-gray-600 body-font">
+        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div
+                class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Before they sold out
+                    <br class="hidden lg:inline-block">readymade gluten
+                </h1>
+                <p class="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air
+                    plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken
+                    authentic tumeric truffaut hexagon try-hard chambray.</p>
+                <div class="flex justify-center">
+                    <button
+                        class="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">Button</button>
+                    <button
+                        class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+                </div>
+            </div>
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+                <img class="object-cover object-center rounded" alt="hero" src="/Images/image2.png">
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- -----------------------------HERO 2------------------------------------------ -->
+
+    <h1 class="text-xl font-semibold text-center text-gray-600" id="languageTitle">Download the Free Resources</h1>
+
+    <!-- Section with list of programming languages -->
+    <section class="container mx-auto py-8">
+        <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 align-middle">
+            <li class="language bg-white p-4 rounded-lg shadow-md transition duration-300 hover:bg-red-200 text-gray-600 text-center"
+                onclick="showPopup('JavaScript')">JavaScript</li>
+            <li class="language bg-white p-4 rounded-lg shadow-md transition duration-300 hover:bg-red-200 text-gray-600 text-center"
+                onclick="showPopup('Python')">Python</li>
+            <li class="language bg-white p-4 rounded-lg shadow-md transition duration-300 hover:bg-red-200 text-gray-600 text-center"
+                onclick="showPopup('Java')">Java</li>
+            <li class="language bg-white p-4 rounded-lg shadow-md transition duration-300 hover:bg-red-200 text-gray-600 text-center"
+                onclick="showPopup('C++')">C++</li>
+        </ul>
+    </section>
+
+    <!-- Popup for viewing notes -->
+    <div class="z-30 notes-popup fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
+        <div class="bg-white p-8 rounded-lg shadow-md max-w-md">
+            <div class="flex justify-between items-center mb-4 ">
+                <h2 class="text-xl font-semibold" id="languageTitle">JavaScript Notes</h2>
+                <h3>(Preview Sample Page)</h3>
+                <button class="close-btn" onclick="closePopup()">
+                    <svg class="w-6 h-6 text-gray-700 hover:text-gray-900" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div class="pdf-viewer hidden" id="pdfViewer"></div>
+            <div class="mt-4 flex justify-between mt-16">
+                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mx-5"
+                    onclick="viewNotes()">View
+                    Notes</button>
+                <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mx-5"
+                    onclick="downloadPDF()">Download PDF</button>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script>
+        var pdfDoc = null;
+        var pageNum = 1;
+        var pageRendering = false;
+        var canvas = document.createElement('canvas');
+        var ctx = canvas.getContext('2d');
+
+        function showPopup(language) {
+            var popup = document.querySelector('.notes-popup');
+            popup.style.display = 'flex';
+            // popup.style.width = "300px";
+            var heading = document.getElementById('languageTitle');
+            heading.textContent = language + ' Notes';
+        }
+
+        function closePopup() {
+            var popup = document.querySelector('.notes-popup');
+            popup.style.display = 'none';
+            location.reload();
+        }
+
+        function viewNotes() {
+            var pdfViewer = document.getElementById('pdfViewer');
+
+            pdfViewer.classList.remove('hidden');
+
+            pdfViewer.innerHTML = '';
+
+            var url = getPDFUrl(); // Get URL of the PDF document based on selected language
+            pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
+                pdfDoc = pdfDoc_;
+                renderPage(pageNum);
+            });
+
+        }
+
+        function downloadPDF() {
+            var url = getPDFUrl(); // Get URL of the PDF document based on selected language
+            var filename = document.getElementById('languageTitle').textContent.trim().replace(' ', '_') + '.pdf';
+            fetch(url)
+                .then(response => response.blob())
+                .then(blob => {
+                    const url = window.URL.createObjectURL(new Blob([blob]));
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.setAttribute('download', filename);
+                    document.body.appendChild(link);
+                    link.click();
+                    link.parentNode.removeChild(link);
+                });
+        }
+
+        function renderPage(num) {
+            pageRendering = true;
+            pdfDoc.getPage(num).then(function (page) {
+                var viewport = page.getViewport({ scale: 1 });
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+                var renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+
+                var renderTask = page.render(renderContext);
+                renderTask.promise.then(function () {
+                    pageRendering = false;
+                    var pdfViewer = document.getElementById('pdfViewer');
+                    pdfViewer.appendChild(canvas);
+                });
+            });
+
+        }
+
+        function getPDFUrl() {
+            var language = document.getElementById('languageTitle').textContent.split(' ')[0]; // Get the selected language
+            // Map language to respective PDF URLs (Replace with your actual PDF URLs)
+            var pdfUrls = {
+                'JavaScript': '../Resource_Pdfs/Booths to Stack .pdf',
+                'Python': './E-Business.pdf',
+                'Java': './LOGIC LOADERS-converted.pdf',
+                'C++': './Project Management For Managers.pdf'
+            };
+            return pdfUrls[language];
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- -----------------Resource 1-------------------------------- -->
 
-    <section class="ResourceOne text-gray-600 body-font">
+    <section class=" text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-col text-center w-full mb-20">
                 <h2 class="text-xs text-red-500 tracking-widest font-medium title-font mb-1">ROOF PARTY POLAROID</h2>
@@ -215,122 +403,235 @@
 
 
 
-    <section class="text-gray-600 body-font">
-        <h1 class="text-center sm:text-3xl text-4xl  font-bold title-font mb-4 text-gray-900">Master Cleanse Reliac Heirloom</h1>
+    <section class="text-gray-600 body-font mb-400 ">
+        <h1 class="text-center sm:text-3xl text-4xl  font-bold title-font mb-4 text-gray-900">Projects</h1>
         <div class="container px-5 py-24 mx-auto">
 
-            <div class="flex flex-wrap -m-4">
-                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <div class="flex flex-wrap -m-4 ">
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full hover:bg-red-200">
                     <a class="block relative h-48 rounded overflow-hidden">
                         <img alt="ecommerce" class="object-cover object-center w-full h-full block"
                             src="https://dummyimage.com/420x260">
                     </a>
-                    <div class="mt-4">
-                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                        <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-                        <p class="mt-1">$16.00</p>
+                    <div class="mt-4 ">
+                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100 ">HTML</a>
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100">CSS</a>
+                        </h3>
+                        <h2 class="text-gray-900 title-font text-lg font-medium mb-6">The Catalyzer</h2>
+                        <div class="flex mb-4 -mt-4">
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-red-600 px-4 py-2 m-2">Preview</div>
+                            
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-white px-4 py-2 m-2">View Code</div>
+                        </div>
+                        
+
                     </div>
                 </div>
-                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full hover:bg-red-200">
                     <a class="block relative h-48 rounded overflow-hidden">
                         <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-                            src="https://dummyimage.com/421x261">
+                            src="https://dummyimage.com/420x260">
                     </a>
-                    <div class="mt-4">
-                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                        <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                        <p class="mt-1">$21.15</p>
+                    <div class="mt-4 ">
+                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100 ">HTML</a>
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100">CSS</a>
+                        </h3>
+                        <h2 class="text-gray-900 title-font text-lg font-medium mb-6">The Catalyzer</h2>
+                        <div class="flex mb-4 -mt-4">
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-red-600 px-4 py-2 m-2">Preview</div>
+                            
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-white px-4 py-2 m-2">View Code</div>
+                        </div>
+                        
+
                     </div>
                 </div>
-                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full hover:bg-red-200">
                     <a class="block relative h-48 rounded overflow-hidden">
                         <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-                            src="https://dummyimage.com/422x262">
+                            src="https://dummyimage.com/420x260">
                     </a>
-                    <div class="mt-4">
-                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                        <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-                        <p class="mt-1">$12.00</p>
+                    <div class="mt-4 ">
+                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100 ">HTML</a>
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100">CSS</a>
+                        </h3>
+                        <h2 class="text-gray-900 title-font text-lg font-medium mb-6">The Catalyzer</h2>
+                        <div class="flex mb-4 -mt-4">
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-red-600 px-4 py-2 m-2">Preview</div>
+                            
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-white px-4 py-2 m-2">View Code</div>
+                        </div>
+                        
+
                     </div>
                 </div>
-                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full hover:bg-red-200">
                     <a class="block relative h-48 rounded overflow-hidden">
                         <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-                            src="https://dummyimage.com/423x263">
+                            src="https://dummyimage.com/420x260">
                     </a>
-                    <div class="mt-4">
-                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                        <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-                        <p class="mt-1">$18.40</p>
+                    <div class="mt-4 ">
+                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100 ">HTML</a>
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100">CSS</a>
+                        </h3>
+                        <h2 class="text-gray-900 title-font text-lg font-medium mb-6">The Catalyzer</h2>
+                        <div class="flex mb-4 -mt-4">
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-red-600 px-4 py-2 m-2">Preview</div>
+                            
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-white px-4 py-2 m-2">View Code</div>
+                        </div>
+                        
+
                     </div>
                 </div>
-                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full hover:bg-red-200">
                     <a class="block relative h-48 rounded overflow-hidden">
                         <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-                            src="https://dummyimage.com/424x264">
+                            src="https://dummyimage.com/420x260">
                     </a>
-                    <div class="mt-4">
-                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                        <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-                        <p class="mt-1">$16.00</p>
+                    <div class="mt-4 ">
+                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100 ">HTML</a>
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100">CSS</a>
+                        </h3>
+                        <h2 class="text-gray-900 title-font text-lg font-medium mb-6">The Catalyzer</h2>
+                        <div class="flex mb-4 -mt-4">
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-red-600 px-4 py-2 m-2">Preview</div>
+                            
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-white px-4 py-2 m-2">View Code</div>
+                        </div>
+                        
+
                     </div>
                 </div>
-                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full hover:bg-red-200">
                     <a class="block relative h-48 rounded overflow-hidden">
                         <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-                            src="https://dummyimage.com/425x265">
+                            src="https://dummyimage.com/420x260">
                     </a>
-                    <div class="mt-4">
-                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                        <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-                        <p class="mt-1">$21.15</p>
+                    <div class="mt-4 ">
+                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100 ">HTML</a>
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100">CSS</a>
+                        </h3>
+                        <h2 class="text-gray-900 title-font text-lg font-medium mb-6">The Catalyzer</h2>
+                        <div class="flex mb-4 -mt-4">
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-red-600 px-4 py-2 m-2">Preview</div>
+                            
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-white px-4 py-2 m-2">View Code</div>
+                        </div>
+                        
+
                     </div>
                 </div>
-                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full hover:bg-red-200">
                     <a class="block relative h-48 rounded overflow-hidden">
                         <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-                            src="https://dummyimage.com/427x267">
+                            src="https://dummyimage.com/420x260">
                     </a>
-                    <div class="mt-4">
-                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                        <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-                        <p class="mt-1">$12.00</p>
+                    <div class="mt-4 ">
+                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100 ">HTML</a>
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100">CSS</a>
+                        </h3>
+                        <h2 class="text-gray-900 title-font text-lg font-medium mb-6">The Catalyzer</h2>
+                        <div class="flex mb-4 -mt-4">
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-red-600 px-4 py-2 m-2">Preview</div>
+                            
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-white px-4 py-2 m-2">View Code</div>
+                        </div>
+                        
+
                     </div>
                 </div>
-                <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+                
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full hover:bg-red-200">
                     <a class="block relative h-48 rounded overflow-hidden">
                         <img alt="ecommerce" class="object-cover object-center w-full h-full block"
-                            src="https://dummyimage.com/428x268">
+                            src="https://dummyimage.com/420x260">
                     </a>
-                    <div class="mt-4">
-                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                        <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-                        <p class="mt-1">$18.40</p>
+                    <div class="mt-4 ">
+                        <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100 ">HTML</a>
+                            <a
+                                class=" language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100">CSS</a>
+                        </h3>
+                        <h2 class="text-gray-900 title-font text-lg font-medium mb-6">The Catalyzer</h2>
+                        <div class="flex mb-4 -mt-4">
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-red-600 px-4 py-2 m-2">Preview</div>
+                            
+                            <div class="flex-1 text-gray-700 text-center text-xs bg-white px-4 py-2 m-2">View Code</div>
+                        </div>
+                        
+
                     </div>
                 </div>
+
             </div>
 
-        </div>
-        <div class="flex flex-wrap -m-4 text-center mb-12">
-            <div class="p-4 sm:w-1/4 w-1/2">
-                <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">2.7K</h2>
-                <p class="leading-relaxed">Users</p>
+
+
+
+
+
+
+            <div
+                class="flex flex-wrap -m-4 text-center language bg-white p-1 rounded-lg shadow-md transition duration-300 bg-gray-100 mb-4">
+                <div class="p-4 sm:w-1/4 w-1/2">
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">5.2K</h2>
+                    <p class="leading-relaxed">Views</p>
+                </div>
+                <div class="p-4 sm:w-1/4 w-1/2">
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">6.8K</h2>
+                    <p class="leading-relaxed">Preview</p>
+                </div>
+                <div class="p-4 sm:w-1/4 w-1/2">
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">500+</h2>
+                    <p class="leading-relaxed">Downloads</p>
+                </div>
+                <div class="p-4 sm:w-1/4 w-1/2">
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">8</h2>
+                    <p class="leading-relaxed">Projects</p>
+                </div>
             </div>
-            <div class="p-4 sm:w-1/4 w-1/2">
-                <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">1.8K</h2>
-                <p class="leading-relaxed">Subscribes</p>
-            </div>
-            <div class="p-4 sm:w-1/4 w-1/2">
-                <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">35</h2>
-                <p class="leading-relaxed">Downloads</p>
-            </div>
-            <div class="p-4 sm:w-1/4 w-1/2">
-                <h2 class="title-font font-medium sm:text-4xl text-3xl text-gray-900">4</h2>
-                <p class="leading-relaxed">Products</p>
-            </div>
-        </div>
 
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -348,10 +649,10 @@
 
     <footer class="text-gray-300 body-font footer bg-gray-300 ">
         <div
-            class="justify-between container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-            <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+            class="justify-between container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col -mt-20">
+            <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left ">
                 <a class="flex-wrap title-font font-medium items-center md:justify-start justify-center text-gray-900 ">
-                    <img class="col-span-1 max-h-12   object-contain " src="../Images/cbLogo.png" alt="CodingBlocksGLAU"
+                    <img class="col-span-1 max-h-12   object-contain " src="/Images/cbLogo.png" alt="CodingBlocksGLAU"
                         width="158" height="48">
                     <span class="ml-3 text-xl">Coding Blocks GLAU</span>
                 </a>
@@ -360,28 +661,28 @@
             <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center justify-end">
 
                 <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">PAGES</h2>
+                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Pages</h2>
                     <footer class="list-none mb-10">
                         <li>
-                            <a href="../index.html" class="text-gray-600 hover:text-red-600">Home</a>
-                        </li>
-                        <li>
-                            <a href="../index.html#Event" class="text-gray-600 hover:text-red-600">Events</a>
+                            <a href="./index.html" class="text-gray-600 hover:text-red-600">Home</a>
                         </li>
                         <li>
                             <a href="#" class="text-gray-600 hover:text-red-600">Courses</a>
                         </li>
                         <li>
-                            <a href="#" class="text-gray-600 hover:text-red-600">Resources</a>
+                            <a href="./Resources/Resources.html" class="text-gray-600 hover:text-red-600">Resources</a>
                         </li>
                         <li>
-                            <a href="../Placements/Placement_index.html"
+                            <a href="./Contact/Contact.html" class="text-gray-600 hover:text-red-600">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="./Placements/Placement_index.html"
                                 class="text-gray-600 hover:text-red-600">Placements</a>
                         </li>
                     </footer>
                 </div>
                 <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Social Links</h2>
                     <footer class="list-none mb-10">
                         <li>
                             <a class="text-gray-600 hover:text-red-600">First Link</a>
@@ -400,7 +701,7 @@
             </div>
         </div>
         <!-- <hr class="h-px my-8 bg-gray-100 border-0 dark:bg-gray-900 -mt-16"> -->
-        <div class="mx-5 -mt-16 italic">
+        <div class="mx-5 -mt-20 italic">
             <h1 class="text-black">Important Links</h1>
             <d>
                 <h3 class="text-sm">
@@ -426,7 +727,7 @@
 
         <div class="bg-gray-100">
             <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row text-center">
-                <p class="text-gray-500 text-sm text-center sm:text-left">Made with ❤
+                <p class="text-gray-500 text-sm text-center sm:text-left">Made with ❤️
                     <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1"
                         target="_blank">by Somnath Kaushik</a>
                 </p>
@@ -510,6 +811,7 @@
         <span></span>
         <span></span>
     </div>
+
     <script src="../Components/Cursor.js"></script>
 
 
