@@ -295,7 +295,7 @@
     background: rgb(0, 166, 255);
     pointer-events: none;
     mix-blend-mode: difference;
-    z-index: 9;
+    z-index: 100;
     animation: rotateShape 10s infinite linear;
     transition: width .5s, height .5s;
     margin-top: -2rem;
@@ -323,7 +323,7 @@
     border-radius: 50%;
     background: #fcfcfc;
     opacity: 0;
-    
+    /* z-index: 10000; */
   }
   #cursor.hovered span {
     animation: animateBlob 1.5s infinite;
