@@ -8,51 +8,51 @@ compiler.init(options)
 app.use(bodyP.json());
 
 // Serve the static files from the "codemirror-5.65.16" directory
-app.use("/codemirror-5.65.16", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Changes By Me/Code Compiler/codemirror-5.65.16"));
+app.use("/codemirror-5.65.16", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/codemirror-5.65.16"));
 
 // Serve the static files from the "Frontend" directory
-app.use("/Frontend", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Changes By Me/Code Compiler/Frontend"));
+app.use("/Frontend", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend"));
 
 
 // Serve the static files from the "Components" directory within the "Frontend" directory
-app.use("/", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Changes By Me/Code Compiler/Frontend"));
+app.use("/", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend"));
 
 
 // Serve the static files from the "Components" directory within the "Frontend" directory
-app.use("/Home", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Changes By Me/Code Compiler/Frontend/Hpme"));
+app.use("/Home", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Home"));
 
 // Serve the static files from the "Components" directory within the "Frontend" directory
-app.use("/Components", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Changes By Me/Code Compiler/Frontend/Components"));
+app.use("/Components", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Components"));
 
 // Serve the static files from the "Components" directory within the "Frontend" directory
-app.use("/Contact", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Changes By Me/Code Compiler/Frontend/Contact"));
+app.use("/Contact", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Contact"));
 
 // Serve the static files from the "Components" directory within the "Frontend" directory
-app.use("/Resources", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Changes By Me/Code Compiler/Frontend/Resources"));
+app.use("/Resources", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Resources"));
 
 // Serve the static files from the "Components" directory within the "Frontend" directory
-app.use("/Resource_Pdfs", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Changes By Me/Code Compiler/Frontend/Resource_Pdfs"));
-
-// Serve the static files from the "Components" directory within the "Frontend" directory
-app.use("/Code%20Compiler", express.static("D:/Somnath Kaushik/Making_New_Cb_web/1Changes By Me - Copy/Code Compiler"));
+app.use("/Resource_Pdfs", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Resource_Pdfs"));
 
 
 // Serve the static files from the "Components" directory within the "Frontend" directory
-app.use("/Images", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Changes By Me/Code Compiler/Frontend/Images"));
+app.use("/Images", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Images"));
 
 // Serve the static files from the "Components" directory within the "Frontend" directory
-app.use("/Placements", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Changes By Me/Code Compiler/Frontend/Placements"));
+app.use("/Placements", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Placements"));
 
 // Serve the static files from the "public" directory
-app.use("/public", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Changes By Me/Code Compiler/public"));
+app.use("/public", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/public"));
 
 
 // Serve the static files from the "public" directory
-app.use("/output.css", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Changes By Me/Code Compiler/output.css"));
+app.use("/output.css", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/output.css"));
 
-+
+
 // Serve the static files from the "public" directory
-app.use("/tailwind.config.js", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Changes By Me/Code Compiler/tailwind.config.js"));
+app.use("/tailwind.config.js", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/tailwind.config.js"));
+
+// Serve the static files from the "public" directory
+app.use("/CodeCompiler.html", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/CodeCompiler.html"));
 
 
 // Serve static files from the "public" folder within the application directory
@@ -69,7 +69,7 @@ app.get("/", function (req, res) {
     compiler.flush(function(){
         console.log("deleted");
     })
-    res.sendFile("D:/Somnath Kaushik/Making_New_Cb_web/Changes By Me/Code Compiler/CodeCompiler.html");
+    res.sendFile("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Home/index.html");
 });
 
 // Route for the contact page

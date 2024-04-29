@@ -60,42 +60,11 @@ body {
 
 .logosec {
     gap: 60px;
+    
     /* margin-top: -1000px; */
 }
 
-.searchbar input {
-    width: 250px;
-    height: 42px;
-    border-radius: 50px 0 0 50px;
-    background-color: var(--background-color3);
-    padding: 0 20px;
-    font-size: 15px;
-    outline: none;
-    border: none;
-}
 
-.searchbtn {
-    width: 50px;
-    height: 42px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    border-radius: 0px 50px 50px 0px;
-    background-color: var(--secondary-color);
-    cursor: pointer;
-}
-
-.message {
-    gap: 40px;
-    position: relative;
-    cursor: pointer;
-}
 
 .circle {
     height: 7px;
@@ -508,34 +477,12 @@ body {
         left: 00px;
     }
 
-    .searchbar {
-        display: none;
-    }
+   
 
     .main {
         padding: 40px 30px 30px 30px;
     }
 
-    .searchbar2 {
-        width: 100%;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        margin: 0 0 40px 0;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-    }
-
-    .searchbar2 input {
-        width: 250px;
-        height: 42px;
-        border-radius: 50px 0 0 50px;
-        background-color: var(--background-color3);
-        padding: 0 20px;
-        font-size: 15px;
-        border: 2px solid var(--secondary-color);
-    }
 }
 
 @media screen and (max-width: 490px) {
@@ -603,9 +550,6 @@ body {
         padding: 10px 10px 5px 10px;
     }
 
-    .searchbtn img {
-        height: 20px;
-    }
 }
 
 @media screen and (max-width: 320px) {
@@ -647,13 +591,6 @@ body {
         width: 70px;
     }
 
-    .searchbtn {
-        width: 40px;
-    }
-
-    .searchbar2 input {
-        width: 180px;
-    }
 }
 
 
