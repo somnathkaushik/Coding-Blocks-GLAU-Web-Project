@@ -1,76 +1,642 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <!-- Adding Logo to web page  -->
-      <link rel="icon" href="./Images/cbLogo.png">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, 
+				initial-scale=1.0">
+  <!-- Adding Logo to web page  -->
+  <link rel="icon" href="../Images/cbLogo.jpg">
+  <!-- Linking other css files -->
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../Components/Navbar.css">
+  <link rel="stylesheet" href="../Components/Banner.css">
+  <link rel="stylesheet" href="../Components/Footer.css">
+  <link rel="stylesheet" href="../Components/Cursor.css">
   <!-- Linking Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <!-- Linking Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" />
-  <!-- ------------Linking css---------- -->
-  <link rel="stylesheet" href="Placement_style.css">
+
+
+  <title>Coding Blocks GLAU</title>
+  <link rel="stylesheet" href="./Placement_style.css">
+
+  <!-- <link rel="stylesheet" href="responsive.css"> -->
 </head>
 
-<body class="bg-blue-600">
-  <span class="absolute text-white text-4xl top-5 left-4 cursor-pointer" onclick="openSidebar()">
-    <i class="bi bi-filter-left px-2 bg-gray-900 rounded-md"></i>
-  </span>
-  <div class="sidebar fixed top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-gray-900">
-    <div class="text-gray-100 text-xl">
-      <div class="p-2.5 mt-1 flex items-center">
-        <i class="bi bi-app-indicator px-2 py-1 rounded-md bg-blue-600"></i>
-        <h1 class="font-bold text-gray-200 text-[15px] ml-3">TailwindCSS</h1>
-        <i class="bi bi-x cursor-pointer ml-28 lg:hidden" onclick="openSidebar()"></i>
+<body>
+
+
+
+  <!-- Navbar -->
+  <nav class="bg-red-600 p-4 ">
+    <div class="container mx-auto flex justify-between items-center ">
+      <!-- Logo -->
+      <a href="#" class="flex items-center text-white text-xl font-bold">
+        <img
+          src="data:image/png;base64,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"
+          alt="Logo" class="w-20 h-8 mr-2">
+        GLAU
+      </a>
+
+      <!-- Hamburger Menu Button -->
+      <button class="text-white focus:outline-none lg:hidden" id="menu-btn">
+        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path id="menu-icon-line1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16"></path>
+          <path id="menu-icon-line2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16">
+          </path>
+          <path id="menu-icon-line3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16">
+          </path>
+        </svg>
+      </button>
+
+      <!-- Navbar Links -->
+      <ul class="hidden lg:flex space-x-4">
+        <li><a href="../Home/index.html" class="nav-link text-white hover:text-gray-300">Home</a></li>
+        <li><a href="../Home/index.html" class="nav-link text-white hover:text-gray-300">Events</a></li>
+        <li><a href="#" class="nav-link text-white hover:text-gray-300">Courses</a></li>
+        <li><a href="#" class="nav-link text-white hover:text-gray-300">Resources</a></li>
+        <li><a href="../Contact/Contact.html" class="nav-link text-white hover:text-gray-300">Contact</a></li>
+        <li><a href="../Placements/Placement_index.html" class="nav-link text-white hover:text-gray-300">Placements</a>
+        </li>
+        <li><a href="/Code Compiler/CodeCompiler.html" class="nav-link text-white hover:text-gray-300">Compiler</a></li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Responsive Menu -->
+  <div class="lg:hidden hidden" id="menu">
+    <ul class="bg-gray-800 p-2 text-center">
+      <li><a href="../Home/index.html" class="block text-white py-2">Home</a></li>
+      <li><a href="../Home/index.html" class="block text-white py-2">Events</a></li>
+      <li><a href="#" class="block text-white py-2">Courses</a></li>
+      <li><a href="#" class="block text-white py-2">Resources</a></li>
+      <li><a href="../Resources/Resources.html" class="block text-white py-2">Contact</a></li>
+      <li><a href="../Placements/Placement_index.html" class="block text-white py-2">Placements</a></li>
+      <li><a href="/Code Compiler/CodeCompiler.html" class="block text-white py-2">Compiler</a></li>
+    </ul>
+  </div>
+
+  <script>
+    // Toggle menu visibility with animation and change icon
+    document.getElementById('menu-btn').addEventListener('click', function () {
+      var menu = document.getElementById('menu');
+      menu.classList.toggle('hidden');
+
+      // Rotate hamburger icon and change its appearance
+      var icon = document.getElementById('menu-icon');
+      icon.classList.toggle('rotate');
+
+      var line1 = document.getElementById('menu-icon-line1');
+      var line2 = document.getElementById('menu-icon-line2');
+      var line3 = document.getElementById('menu-icon-line3');
+
+      if (menu.classList.contains('hidden')) {
+        line1.setAttribute('d', 'M4 6h16');
+        line2.setAttribute('d', 'M4 12h16');
+        line3.setAttribute('d', 'M4 18h16');
+      } else {
+        line1.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+        line2.setAttribute('d', 'M6 6l12 12');
+        line3.setAttribute('d', 'M6 6l12 12');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Banner -->
+  <div class="banner">
+    <p>Contact Somnath Kaushik for discount coupon Codes on Coding Blocks Courses <a
+        href="mailto:somnath.kaushik_cs21@gla.ac.in">
+        <d>somnath.kaushik_cs21@gla.ac.in</d>
+      </a></p>
+    <button id="closeBanner">X</button>
+  </div>
+
+  <!-- Content (for spacing) -->
+  <div style="height: 1000px;">
+    <!-- This is just to create some space so the banner doesn't cover content -->
+  </div>
+
+  <script>
+    // JavaScript to handle banner removal
+    document.getElementById('closeBanner').addEventListener('click', function () {
+      var banner = document.querySelector('.banner');
+      banner.style.display = 'none';
+    });
+  </script>
+
+
+
+  <!-- for header part -->
+  <!-- <header>
+
+    <div class="logosec">
+      <div class="logo">GeeksForGeeks</div>
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+        class="icn menuicn" id="menuicn" alt="menu-icon">
+    </div>
+
+    <div class="searchbar">
+      <input type="text" placeholder="Search">
+      <div class="searchbtn">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
+          class="icn srchicn" alt="search-icon">
       </div>
-      <div class="my-2 bg-gray-600 h-[1px]"></div>
     </div>
-    <div class="p-2.5 flex items-center rounded-md px-4 duration-300 cursor-pointer bg-gray-700 text-white">
-      <i class="bi bi-search text-sm"></i>
-      <input type="text" placeholder="Search" class="text-[15px] ml-4 w-full bg-transparent focus:outline-none" />
-    </div>
-    <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
-      <i class="bi bi-house-door-fill"></i>
-      <span class="text-[15px] ml-4 text-gray-200 font-bold">Home</span>
-    </div>
-    <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
-      <i class="bi bi-bookmark-fill"></i>
-      <span class="text-[15px] ml-4 text-gray-200 font-bold">Bookmark</span>
-    </div>
-    <div class="my-4 bg-gray-600 h-[1px]"></div>
-    <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white"
-      onclick="dropdown()">
-      <i class="bi bi-chat-left-text-fill"></i>
-      <div class="flex justify-between w-full items-center">
-        <span class="text-[15px] ml-4 text-gray-200 font-bold">Chatbox</span>
-        <span class="text-sm rotate-180" id="arrow">
-          <i class="bi bi-chevron-down"></i>
-        </span>
+
+    <div class="message">
+      <div class="circle"></div>
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png" class="icn" alt="">
+      <div class="dp">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
+          class="dpicn" alt="dp">
       </div>
     </div>
-    <div class="text-left text-sm mt-2 w-4/5 mx-auto text-gray-200 font-bold" id="submenu">
-      <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
-        Social
-      </h1>
-      <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
-        Personal
-      </h1>
-      <h1 class="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
-        Friends
-      </h1>
+
+  </header> -->
+
+
+
+
+  
+
+  <div class="main-container">
+    
+    <div class="navcontainer">
+      <nav class="nav">
+        <div class="nav-upper-options">
+          <div class="nav-option option1">
+            <img src="../Images/dashboard.png" class="nav-img" alt="articles">
+            <h3> Dashboard</h3>
+          </div>
+
+          <div class="option2 nav-option">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png" class="nav-img"
+              alt="articles">
+            <h3> Articles</h3>
+          </div>
+
+          <div class="nav-option option3">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img"
+              alt="report">
+            <h3> Report</h3>
+          </div>
+
+          <div class="nav-option option4">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png" class="nav-img"
+              alt="institution">
+            <h3> Institution</h3>
+          </div>
+
+          <div class="nav-option option5">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png" class="nav-img"
+              alt="blog">
+            <h3> Profile</h3>
+          </div>
+
+          <div class="nav-option option6">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png" class="nav-img"
+              alt="settings">
+            <h3> Settings</h3>
+          </div>
+
+          <div class="nav-option logout">
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png" class="nav-img"
+              alt="logout">
+            <h3>Logout</h3>
+          </div>
+
+        </div>
+      </nav>
+      
     </div>
-    <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
-      <i class="bi bi-box-arrow-in-right"></i>
-      <span class="text-[15px] ml-4 text-gray-200 font-bold">Logout</span>
+    <header>
+      <div class="logosec">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
+          class="icn menuicn" id="menuicn" alt="menu-icon">
+      </div>
+    </header>
+
+
+    <div class="main">
+      
+
+      <div class="report-container">
+        <div class="report-header">
+          <h1 class="recent-Articles">Recent Placements</h1>
+          <!-- <button class="view">View All</button> -->
+          <div class="option-container text-center mb-0 right-0">
+            <select onchange="showTable(this.value)"
+              class="bg-red-500 hover:bg-red-200 text-white font-semibold py-2 px-4 rounded">
+              <!-- <option value="" disabled selected>Choose</option> -->
+              <option value="2024" selected>2024</option>
+              <option value="2025">2025</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- --------------------------- 2024 data--------------------------------------------------------------------- -->
+
+
+        <div class="table-container " id="table-2024">
+
+
+          <div class="report-body">
+            <!-- <div class="report-topic-heading">
+
+              <h3 class="t-op">Name</h3>
+              <h3 class="t-op">Job Profile</h3>
+              <h3 class="t-op">Company</h3>
+              <h3 class="t-op">Profile</h3>
+            </div> -->
+
+            <div class="items">
+              <div class=" item1">
+                <h3 class="t-op heading">Name</h3>
+                <h3 class="t-op-nextlvl one">Somnath Kaushik</h3>
+                <h3 class="t-op-nextlvl">Name 1</h3>
+                <h3 class="t-op-nextlvl">Name 1</h3>
+                <h3 class="t-op-nextlvl">Name 1</h3>
+                <h3 class="t-op-nextlvl">Name 1</h3>
+                <h3 class="t-op-nextlvl">Name 1</h3>
+                <h3 class="t-op-nextlvl">Name 1</h3>
+                <h3 class="t-op-nextlvl">Name 1</h3>
+                <h3 class="t-op-nextlvl">Name 1</h3>
+                <h3 class="t-op-nextlvl">Name 1</h3>
+              </div>
+
+              <div class="item1 i1">
+                <h3 class="t-op heading">Job Profile</h3>
+                <h3 class="t-op-nextlvl one">SDE</h3>
+                <h3 class="t-op-nextlvl">SDE</h3>
+                <h3 class="t-op-nextlvl">SDE</h3>
+                <h3 class="t-op-nextlvl">SDE</h3>
+                <h3 class="t-op-nextlvl">SDE</h3>
+                <h3 class="t-op-nextlvl">SDE</h3>
+                <h3 class="t-op-nextlvl">SDE</h3>
+                <h3 class="t-op-nextlvl">SDE</h3>
+                <h3 class="t-op-nextlvl">SDE</h3>
+                <h3 class="t-op-nextlvl">SDE</h3>
+              </div>
+
+              <div class="item1 i2">
+                <h3 class="t-op heading">Company</h3>
+                <h3 class="t-op-nextlvl one">Google</h3>
+                <h3 class="t-op-nextlvl">Google</h3>
+                <h3 class="t-op-nextlvl">Google</h3>
+                <h3 class="t-op-nextlvl">Google</h3>
+                <h3 class="t-op-nextlvl">Google</h3>
+                <h3 class="t-op-nextlvl">Google</h3>
+                <h3 class="t-op-nextlvl">Google</h3>
+                <h3 class="t-op-nextlvl">Google</h3>
+                <h3 class="t-op-nextlvl">Google</h3>
+                <h3 class="t-op-nextlvl">Google</h3>
+
+
+
+              </div>
+
+              <div class="item1 i2">
+                <h3 class="t-op heading">Package</h3>
+                <h3 class="t-op-nextlvl one">1 Crore</h3>
+                <h3 class="t-op-nextlvl">1 Crore</h3>
+                <h3 class="t-op-nextlvl">1 Crore</h3>
+                <h3 class="t-op-nextlvl">1 Crore</h3>
+                <h3 class="t-op-nextlvl">1 Crore</h3>
+                <h3 class="t-op-nextlvl">1 Crore</h3>
+                <h3 class="t-op-nextlvl">1 Crore</h3>
+                <h3 class="t-op-nextlvl">1 Crore</h3>
+                <h3 class="t-op-nextlvl">1 Crore</h3>
+                <h3 class="t-op-nextlvl">1 Crore</h3>
+
+
+              </div>
+
+
+
+            </div>
+          </div>
+        </div>
+
+
+        <!-- --------------------------- 2025 data--------------------------------------------------------------------- -->
+
+
+
+        <div class="table-container hidden" id="table-2025">
+
+
+          <div class="report-body">
+            <div class="report-topic-heading">
+
+              <h3 class="t-op">Name</h3>
+              <h3 class="t-op">Job Profile</h3>
+              <h3 class="t-op">Company</h3>
+              <h3 class="t-op">Profile</h3>
+            </div>
+
+            <div class="items">
+              <div class=" item1">
+                <h3 class="t-op-nextlvl one">Adarsh Pandey</h3>
+                <h3 class="t-op-nextlvl">Aryan Dhaiya</h3>
+                <h3 class="t-op-nextlvl">Dushyant Singh</h3>
+                <h3 class="t-op-nextlvl">Dhruv Singh</h3>
+                <h3 class="t-op-nextlvl">Ayush Mittal</h3>
+                <h3 class="t-op-nextlvl">Gopal Chobey</h3>
+                <h3 class="t-op-nextlvl">Name 1</h3>
+                <h3 class="t-op-nextlvl">Name 1</h3>
+                <h3 class="t-op-nextlvl">Name 1</h3>
+                <h3 class="t-op-nextlvl">Name 1</h3>
+              </div>
+
+              <div class="item1 i1">
+                <h3 class="t-op-nextlvl one">Product Engineer</h3>
+                <h3 class="t-op-nextlvl">Product Engineer</h3>
+                <h3 class="t-op-nextlvl">Software Dev. Engineer</h3>
+                <h3 class="t-op-nextlvl">Software Dev. Engineer</h3>
+                <h3 class="t-op-nextlvl">Product Engineer</h3>
+                <h3 class="t-op-nextlvl">Product Engineer</h3>
+                <h3 class="t-op-nextlvl">SDE</h3>
+                <h3 class="t-op-nextlvl">SDE</h3>
+                <h3 class="t-op-nextlvl">SDE</h3>
+                <h3 class="t-op-nextlvl">SDE</h3>
+              </div>
+
+              <div class="item1 i2">
+                <h3 class="t-op-nextlvl one">Juspay</h3>
+                <h3 class="t-op-nextlvl">Juspay</h3>
+                <h3 class="t-op-nextlvl">Namma Yatri</h3>
+                <h3 class="t-op-nextlvl">Namma Yatri</h3>
+                <h3 class="t-op-nextlvl">Namma Yatri</h3>
+                <h3 class="t-op-nextlvl">Namma Yatri</h3>
+                <h3 class="t-op-nextlvl">Google</h3>
+                <h3 class="t-op-nextlvl">Google</h3>
+                <h3 class="t-op-nextlvl">Google</h3>
+                <h3 class="t-op-nextlvl">Google</h3>
+
+
+
+              </div>
+
+              <div class="item1 i2">
+                <h3 class="t-op-nextlvl one">21 LPA</h3>
+                <h3 class="t-op-nextlvl">21 LPA</h3>
+                <h3 class="t-op-nextlvl">15 LPA</h3>
+                <h3 class="t-op-nextlvl">15 LPA</h3>
+                <h3 class="t-op-nextlvl">12+ LPA</h3>
+                <h3 class="t-op-nextlvl">12+ LPA</h3>
+                <h3 class="t-op-nextlvl">1 Crore</h3>
+                <h3 class="t-op-nextlvl">1 Crore</h3>
+                <h3 class="t-op-nextlvl">1 Crore</h3>
+                <h3 class="t-op-nextlvl">1 Crore</h3>
+
+
+              </div>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- <script type="text/javascript">
-      
-    </script> -->
-  <script src="Placement_script.js"></script>
+  <script>
+
+    function showTable(year) {
+      var tables = document.querySelectorAll('.table-container');
+      tables.forEach(function (table) {
+        table.classList.add('hidden');
+      });
+
+      var table = document.getElementById('table-' + year);
+      table.classList.remove('hidden');
+    }
+  </script>
+  <script>
+    function toggleOptions() {
+      var options = document.getElementById("options");
+      options.classList.toggle("hidden");
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- --------------------Footer------------------------ -->
+
+  <footer class="text-gray-300 body-font footer bg-gray-300 ">
+    <div
+      class="justify-between container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col -mt-20">
+      <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left ">
+        <a class="flex-wrap title-font font-medium items-center md:justify-start justify-center text-gray-900 ">
+          <img class="col-span-1 max-h-12   object-contain " src="../Images/cbLogo.jpg" alt="CodingBlocksGLAU"
+            width="158" height="48">
+          <span class="ml-3 text-xl">Coding Blocks GLAU</span>
+        </a>
+        <p class="mt-2 text-sm text-gray-500">Code Like A Boss With Coding Blocks.</p>
+      </div>
+      <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center justify-end">
+
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Pages</h2>
+          <footer class="list-none mb-10">
+            <li>
+              <a href="../Home/index.html" class="text-gray-600 hover:text-red-600">Home</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-red-600">Courses</a>
+            </li>
+            <li>
+              <a href="../Resources/Resources.html" class="text-gray-600 hover:text-red-600">Resources</a>
+            </li>
+            <li>
+              <a href="../Contact/Contact.html" class="text-gray-600 hover:text-red-600">Contact Us</a>
+            </li>
+            <li>
+              <a href="../Placements/Placement_index.html" class="text-gray-600 hover:text-red-600">Placements</a>
+            </li>
+            <li>
+              <a href="/Code Compiler/CodeCompiler.html" class="text-gray-600 hover:text-red-600">Compiler</a>
+            </li>
+          </footer>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Social Links</h2>
+          <footer class="list-none mb-10">
+            <li>
+              <a class="text-gray-600 hover:text-red-600">First Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-red-600">Second Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-red-600">Third Link</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-red-600">Fourth Link</a>
+            </li>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <!-- <hr class="h-px my-8 bg-gray-100 border-0 dark:bg-gray-900 -mt-16"> -->
+    <div class="mx-5 -mt-20 italic">
+      <h1 class="text-black">Important Links</h1>
+      <d>
+        <h3 class="text-sm">
+          <d>1. CODING COURSES FOR BEGINNERS:</d>
+        </h3>
+        <p class="mx-10 text-xs">Data Structures and Algorithms in C++ | Data Structures and Algorithms in Java|
+          Data Structures and Algorithms in Python| Python for Data science| Master Interview prep with C++|
+          Master Interview prep with Java| Master Non Coding subjects for Interview drives| Master Preperation
+          for FAANG| Dynamic Programming - Must Do Problem Set!| Data Structures in Real Life Projects| Graph
+          Algorithms| Dynamic programming| Python for Developers Master Course| Java collections framework|
+          Selenium with Python| Digital Marketing course| Java for Class XII Board practicals| C++ for Class
+          XII boards</p>
+
+        <h3 class="text-sm">
+          <d>2. ADVANCED CODING COURSES:</d>
+        </h3>
+        <p class="mx-10 text-xs">Master Competitive programming | Master Full stack Web development using
+          node.JS(MERN) | Master Front end Web development | Master Backend Web development using node.JS |
+          Master Android app development using Kotlin |Master Data science and Machine learning | Master
+          Machine learning</p>
+      </d>
+    </div>
+
+    <div class="bg-gray-100">
+      <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row text-center">
+        <p class="text-gray-500 text-sm text-center sm:text-left">Made with ❤️
+          <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1"
+            target="_blank">by Somnath Kaushik</a>
+        </p>
+        <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+          <a class="text-gray-500">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+              viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+              viewBox="0 0 24 24">
+              <path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+              </path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-5 h-5" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500">
+            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+              <path stroke="none"
+                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+              </path>
+              <circle cx="4" cy="4" r="2" stroke="none"></circle>
+            </svg>
+          </a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+  <!-- -----------Coding Blocks GLAU------------------ -->
+
+  <div id="load">
+    <div>C</div>
+    <div>O</div>
+    <div>D</div>
+    <div>I</div>
+    <div>N</div>
+    <div>G</div>
+    <div> </div>
+    <div> </div>
+    <div>B</div>
+    <div>L</div>
+    <div>O</div>
+    <div>C</div>
+    <div>K</div>
+    <div>S</div>
+    <div> </div>
+    <div> </div>
+    <div>G</div>
+    <div>L</div>
+    <div>A</div>
+    <div>U</div>
+  </div>
+
+
+
+
+
+  <!-- ----------------------Cursor------------------------ -->
+
+  <div id="cursor">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <script src="../Components/Cursor.js"></script>
+
+
+
+
+
+
+
+
+  <script src="./Placement_script.js"></script>
+
 </body>
 
 </html>

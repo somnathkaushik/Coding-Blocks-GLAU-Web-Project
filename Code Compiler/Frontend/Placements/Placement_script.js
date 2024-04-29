@@ -1,9 +1,6 @@
-function dropdown() {
-    document.querySelector("#submenu").classList.toggle("hidden");
-    document.querySelector("#arrow").classList.toggle("rotate-0");
-  }
-  dropdown();
+let menuicn = document.querySelector(".menuicn"); 
+let nav = document.querySelector(".navcontainer"); 
 
-  function openSidebar() {
-    document.querySelector(".sidebar").classList.toggle("hidden");
-  }
+menuicn.addEventListener("click", () => { 
+	nav.classList.toggle("navclose"); 
+})
