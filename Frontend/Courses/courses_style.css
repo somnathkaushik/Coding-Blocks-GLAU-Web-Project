@@ -1,0 +1,35 @@
+.monuBhaiyaOne {
+    margin-top: -62rem;
+}
+
+.active-link {
+    /* border-color: red !important; */
+    color: red !important;
+}
+
+.inactive-link {
+    color: black !important;
+}
+
+
+
+table {
+    -webkit-text-size-adjust: 100%;
+    /* color: #fff; */
+    font-family: Mulish, sans-serif;
+    font-size: inherit;
+    font-weight: 400;
+    line-height: 1.5rem;
+    text-align: justify;
+    outline: none;
+    box-sizing: inherit;
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding: 0;
+    display: block;
+    overflow-x: auto;
+}
+
+tr, td, th{
+    border: 1px solid red;
+}

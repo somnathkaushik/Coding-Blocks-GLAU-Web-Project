@@ -31,6 +31,9 @@ app.use("/Contact", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-
 app.use("/Resources", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Resources"));
 
 // Serve the static files from the "Components" directory within the "Frontend" directory
+app.use("/Courses", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Courses"));
+
+// Serve the static files from the "Components" directory within the "Frontend" directory
 app.use("/Resource_Pdfs", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Resource_Pdfs"));
 
 
