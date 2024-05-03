@@ -29,7 +29,7 @@
 
 
   <!-- Navbar -->
-  <nav class="bg-red-600 p-4 navi">
+  <nav class="bg-red-600 p-4 navi darkable ">
     <div class="container mx-auto flex justify-between items-center ">
       <!-- Logo -->
       <a href="#" class="flex items-center text-white text-xl font-bold">
@@ -123,7 +123,7 @@
 
 
   <!-- Banner -->
-  <div class="banner">
+  <div class="banner darkable">
     <p>Contact Somnath Kaushik for discount coupon Codes on Coding Blocks Courses <a
         href="mailto:somnath.kaushik_cs21@gla.ac.in">
         <d>somnath.kaushik_cs21@gla.ac.in</d>
@@ -177,91 +177,102 @@
 
 
 
-  
+
 
   <div class="main-container">
-    
-    <div class="navcontainer">
-      <nav class="nav">
-        <div class="nav-upper-options">
-          <div class="nav-option option1">
-            <img src="../Images/dashboard.png" class="nav-img" alt="articles">
-            <h3> Dashboard</h3>
-          </div>
 
-          <div class="option2 nav-option">
-            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png" class="nav-img"
-              alt="articles">
-            <h3> Articles</h3>
-          </div>
-
-          <div class="nav-option option3">
-            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img"
-              alt="report">
-            <h3> Report</h3>
-          </div>
-
-          <div class="nav-option option4">
-            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png" class="nav-img"
-              alt="institution">
-            <h3> Institution</h3>
-          </div>
-
-          <div class="nav-option option5">
-            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183323/10.png" class="nav-img"
-              alt="blog">
-            <h3> Profile</h3>
-          </div>
-
-          <div class="nav-option option6">
-            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png" class="nav-img"
-              alt="settings">
-            <h3> Settings</h3>
-          </div>
-
-          <div class="nav-option logout">
-            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png" class="nav-img"
-              alt="logout">
-            <h3>Logout</h3>
-          </div>
-
+    <div class="navcontainer border-white border-2">
+      <nav class="nav darkable">
+        <div class="nav-upper-options ">
+          <ul>
+            <li class="border-white border-2">
+              <button class="nav-option option1 darkable" onclick="showDashboard()">
+                <img src="../Images/dashboard.png" class="nav-img" alt="articles">
+                <h3>Dashboard</h3>
+              </button>
+            </li>
+            <li class="border-white border-2">
+              <button class="nav-option option2" onclick="redirectToAdminPage()">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png" class="nav-img"
+                  alt="blogs">
+                <h3>Blogs</h3>
+              </button>
+            </li>
+            <!-- <li class="border-white border-2">
+              <button class="nav-option option3" onclick="showStatistics()">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/5.png" class="nav-img" alt="report">
+                <h3>Report</h3>
+              </button>
+            </li> -->
+            <!-- <li class="border-white border-2">
+              <button class="nav-option option4" onclick="showResources()">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/6.png" class="nav-img" alt="institution">
+                <h3>Resources</h3>
+              </button>
+            </li>
+            <li class="border-white border-2">
+              <button class="nav-option option6" onclick="showContactUs()">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183320/4.png" class="nav-img" alt="settings">
+                <h3>Contact Us</h3>
+              </button>
+            </li> -->
+            <li class="border-white border-2">
+              <button class="nav-option option5" onclick="showLogin()">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png" class="nav-img"
+                  alt="articles">
+                <h3>Login</h3>
+              </button>
+            </li>
+            <li class="border-white border-2">
+              <button class="nav-option logout" onclick="showTheme()">
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183321/7.png" class="nav-img"
+                  alt="logout">
+                <h3>Theme</h3>
+              </button>
+            </li>
+          </ul>
         </div>
       </nav>
-      
+
+
+
     </div>
     <header>
       <div class="logosec">
-        <img src="../Images/arrow.png"
-          class="icn menuicn" id="menuicn" alt="menu-icon">
+        <img src="../Images/arrow.png" class="icn menuicn" id="menuicn" alt="menu-icon">
       </div>
     </header>
 
 
+
     <div class="main">
-      
 
-      <div class="report-container">
-        <div class="report-header">
-          <h1 class="recent-Articles">Recent Placements</h1>
-          <!-- <button class="view">View All</button> -->
-          <div class="option-container text-center mb-0 right-0">
-            <select onchange="showTable(this.value)"
-              class="bg-red-500 hover:bg-red-200 text-white font-semibold py-2 px-4 rounded">
-              <!-- <option value="" disabled selected>Choose</option> -->
-              <option value="2024" selected>2024</option>
-              <option value="2025">2025</option>
-            </select>
+
+      <!-- Content -->
+      <div id="content" class="flex-1 ">
+        <!-- Default content -->
+        <div class="report-container darkable">
+          <div class="report-header">
+            <h1 class="recent-Articles">Recent Placements</h1>
+            <!-- <button class="view">View All</button> -->
+            <div class="option-container text-center mb-0 right-0">
+              <select onchange="showTable(this.value)"
+                class="bg-red-500 hover:bg-red-200 text-white font-semibold py-2 px-4 rounded">
+                <!-- <option value="" disabled selected>Choose</option> -->
+                <option value="2024" selected>2024</option>
+                <option value="2025">2025</option>
+              </select>
+            </div>
           </div>
-        </div>
 
-        <!-- --------------------------- 2024 data--------------------------------------------------------------------- -->
-
-
-        <div class="table-container " id="table-2024">
+          <!-- --------------------------- 2024 data--------------------------------------------------------------------- -->
 
 
-          <div class="report-body">
-            <!-- <div class="report-topic-heading">
+          <div class="table-container " id="table-2024">
+
+
+            <div class="report-body">
+              <!-- <div class="report-topic-heading">
 
               <h3 class="t-op">Name</h3>
               <h3 class="t-op">Job Profile</h3>
@@ -269,156 +280,424 @@
               <h3 class="t-op">Profile</h3>
             </div> -->
 
-            <div class="items">
-              <div class=" item1">
-                <h3 class="t-op heading">Name</h3>
-                <h3 class="t-op-nextlvl one">Somnath Kaushik</h3>
-                <h3 class="t-op-nextlvl">Name 1</h3>
-                <h3 class="t-op-nextlvl">Name 1</h3>
-                <h3 class="t-op-nextlvl">Name 1</h3>
-                <h3 class="t-op-nextlvl">Name 1</h3>
-                <h3 class="t-op-nextlvl">Name 1</h3>
-                <h3 class="t-op-nextlvl">Name 1</h3>
-                <h3 class="t-op-nextlvl">Name 1</h3>
-                <h3 class="t-op-nextlvl">Name 1</h3>
-                <h3 class="t-op-nextlvl">Name 1</h3>
+              <div class="items">
+                <div class=" item1">
+                  <h3 class="t-op heading">Name</h3>
+                  <h3 class="t-op-nextlvl one">Somnath Kaushik</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                </div>
+
+                <div class="item1 i1">
+                  <h3 class="t-op heading">Job Profile</h3>
+                  <h3 class="t-op-nextlvl one">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                </div>
+
+                <div class="item1 i2">
+                  <h3 class="t-op heading">Company</h3>
+                  <h3 class="t-op-nextlvl one">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+
+
+
+                </div>
+
+                <div class="item1 i2">
+                  <h3 class="t-op heading">Package</h3>
+                  <h3 class="t-op-nextlvl one">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+
+
+                </div>
+
+
+
               </div>
-
-              <div class="item1 i1">
-                <h3 class="t-op heading">Job Profile</h3>
-                <h3 class="t-op-nextlvl one">SDE</h3>
-                <h3 class="t-op-nextlvl">SDE</h3>
-                <h3 class="t-op-nextlvl">SDE</h3>
-                <h3 class="t-op-nextlvl">SDE</h3>
-                <h3 class="t-op-nextlvl">SDE</h3>
-                <h3 class="t-op-nextlvl">SDE</h3>
-                <h3 class="t-op-nextlvl">SDE</h3>
-                <h3 class="t-op-nextlvl">SDE</h3>
-                <h3 class="t-op-nextlvl">SDE</h3>
-                <h3 class="t-op-nextlvl">SDE</h3>
-              </div>
-
-              <div class="item1 i2">
-                <h3 class="t-op heading">Company</h3>
-                <h3 class="t-op-nextlvl one">Google</h3>
-                <h3 class="t-op-nextlvl">Google</h3>
-                <h3 class="t-op-nextlvl">Google</h3>
-                <h3 class="t-op-nextlvl">Google</h3>
-                <h3 class="t-op-nextlvl">Google</h3>
-                <h3 class="t-op-nextlvl">Google</h3>
-                <h3 class="t-op-nextlvl">Google</h3>
-                <h3 class="t-op-nextlvl">Google</h3>
-                <h3 class="t-op-nextlvl">Google</h3>
-                <h3 class="t-op-nextlvl">Google</h3>
-
-
-
-              </div>
-
-              <div class="item1 i2">
-                <h3 class="t-op heading">Package</h3>
-                <h3 class="t-op-nextlvl one">1 Crore</h3>
-                <h3 class="t-op-nextlvl">1 Crore</h3>
-                <h3 class="t-op-nextlvl">1 Crore</h3>
-                <h3 class="t-op-nextlvl">1 Crore</h3>
-                <h3 class="t-op-nextlvl">1 Crore</h3>
-                <h3 class="t-op-nextlvl">1 Crore</h3>
-                <h3 class="t-op-nextlvl">1 Crore</h3>
-                <h3 class="t-op-nextlvl">1 Crore</h3>
-                <h3 class="t-op-nextlvl">1 Crore</h3>
-                <h3 class="t-op-nextlvl">1 Crore</h3>
-
-
-              </div>
-
-
-
             </div>
           </div>
-        </div>
 
 
-        <!-- --------------------------- 2025 data--------------------------------------------------------------------- -->
+          <!-- --------------------------- 2025 data--------------------------------------------------------------------- -->
 
 
 
-        <div class="table-container hidden" id="table-2025">
+          <div class="table-container hidden" id="table-2025">
 
 
-          <div class="report-body">
-            <div class="report-topic-heading">
+            <div class="report-body">
+              <div class="report-topic-heading">
 
-              <h3 class="t-op">Name</h3>
-              <h3 class="t-op">Job Profile</h3>
-              <h3 class="t-op">Company</h3>
-              <h3 class="t-op">Profile</h3>
-            </div>
-
-            <div class="items">
-              <div class=" item1">
-                <h3 class="t-op-nextlvl one">Adarsh Pandey</h3>
-                <h3 class="t-op-nextlvl">Aryan Dhaiya</h3>
-                <h3 class="t-op-nextlvl">Dushyant Singh</h3>
-                <h3 class="t-op-nextlvl">Dhruv Singh</h3>
-                <h3 class="t-op-nextlvl">Ayush Mittal</h3>
-                <h3 class="t-op-nextlvl">Gopal Chobey</h3>
-                <h3 class="t-op-nextlvl">Name 1</h3>
-                <h3 class="t-op-nextlvl">Name 1</h3>
-                <h3 class="t-op-nextlvl">Name 1</h3>
-                <h3 class="t-op-nextlvl">Name 1</h3>
+                <h3 class="t-op">Name</h3>
+                <h3 class="t-op">Job Profile</h3>
+                <h3 class="t-op">Company</h3>
+                <h3 class="t-op">Profile</h3>
               </div>
 
-              <div class="item1 i1">
-                <h3 class="t-op-nextlvl one">Product Engineer</h3>
-                <h3 class="t-op-nextlvl">Product Engineer</h3>
-                <h3 class="t-op-nextlvl">Software Dev. Engineer</h3>
-                <h3 class="t-op-nextlvl">Software Dev. Engineer</h3>
-                <h3 class="t-op-nextlvl">Product Engineer</h3>
-                <h3 class="t-op-nextlvl">Product Engineer</h3>
-                <h3 class="t-op-nextlvl">SDE</h3>
-                <h3 class="t-op-nextlvl">SDE</h3>
-                <h3 class="t-op-nextlvl">SDE</h3>
-                <h3 class="t-op-nextlvl">SDE</h3>
+              <div class="items">
+                <div class=" item1">
+                  <h3 class="t-op-nextlvl one">Adarsh Pandey</h3>
+                  <h3 class="t-op-nextlvl">Aryan Dhaiya</h3>
+                  <h3 class="t-op-nextlvl">Dushyant Singh</h3>
+                  <h3 class="t-op-nextlvl">Dhruv Singh</h3>
+                  <h3 class="t-op-nextlvl">Ayush Mittal</h3>
+                  <h3 class="t-op-nextlvl">Gopal Chobey</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                </div>
+
+                <div class="item1 i1">
+                  <h3 class="t-op-nextlvl one">Product Engineer</h3>
+                  <h3 class="t-op-nextlvl">Product Engineer</h3>
+                  <h3 class="t-op-nextlvl">Software Dev. Engineer</h3>
+                  <h3 class="t-op-nextlvl">Software Dev. Engineer</h3>
+                  <h3 class="t-op-nextlvl">Product Engineer</h3>
+                  <h3 class="t-op-nextlvl">Product Engineer</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                </div>
+
+                <div class="item1 i2">
+                  <h3 class="t-op-nextlvl one">Juspay</h3>
+                  <h3 class="t-op-nextlvl">Juspay</h3>
+                  <h3 class="t-op-nextlvl">Namma Yatri</h3>
+                  <h3 class="t-op-nextlvl">Namma Yatri</h3>
+                  <h3 class="t-op-nextlvl">Namma Yatri</h3>
+                  <h3 class="t-op-nextlvl">Namma Yatri</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+
+
+
+                </div>
+
+                <div class="item1 i2">
+                  <h3 class="t-op-nextlvl one">21 LPA</h3>
+                  <h3 class="t-op-nextlvl">21 LPA</h3>
+                  <h3 class="t-op-nextlvl">15 LPA</h3>
+                  <h3 class="t-op-nextlvl">15 LPA</h3>
+                  <h3 class="t-op-nextlvl">12+ LPA</h3>
+                  <h3 class="t-op-nextlvl">12+ LPA</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+
+
+                </div>
+
+
+
               </div>
-
-              <div class="item1 i2">
-                <h3 class="t-op-nextlvl one">Juspay</h3>
-                <h3 class="t-op-nextlvl">Juspay</h3>
-                <h3 class="t-op-nextlvl">Namma Yatri</h3>
-                <h3 class="t-op-nextlvl">Namma Yatri</h3>
-                <h3 class="t-op-nextlvl">Namma Yatri</h3>
-                <h3 class="t-op-nextlvl">Namma Yatri</h3>
-                <h3 class="t-op-nextlvl">Google</h3>
-                <h3 class="t-op-nextlvl">Google</h3>
-                <h3 class="t-op-nextlvl">Google</h3>
-                <h3 class="t-op-nextlvl">Google</h3>
-
-
-
-              </div>
-
-              <div class="item1 i2">
-                <h3 class="t-op-nextlvl one">21 LPA</h3>
-                <h3 class="t-op-nextlvl">21 LPA</h3>
-                <h3 class="t-op-nextlvl">15 LPA</h3>
-                <h3 class="t-op-nextlvl">15 LPA</h3>
-                <h3 class="t-op-nextlvl">12+ LPA</h3>
-                <h3 class="t-op-nextlvl">12+ LPA</h3>
-                <h3 class="t-op-nextlvl">1 Crore</h3>
-                <h3 class="t-op-nextlvl">1 Crore</h3>
-                <h3 class="t-op-nextlvl">1 Crore</h3>
-                <h3 class="t-op-nextlvl">1 Crore</h3>
-
-
-              </div>
-
-
-
             </div>
           </div>
         </div>
       </div>
+
     </div>
+
+
+    <script>
+      // Function to show Dashboard content
+      function showDashboard() {
+        const dashboardContent = `
+        <div class="report-container darkable ${document.body.classList.contains('dark') ? 'dark' : ''}">
+          <div class="report-header">
+            <h1 class="recent-Articles">Recent Placements</h1>
+            <!-- <button class="view">View All</button> -->
+            <div class="option-container text-center mb-0 right-0">
+              <select onchange="showTable(this.value)"
+                class="bg-red-500 hover:bg-red-200 text-white font-semibold py-2 px-4 rounded">
+                <!-- <option value="" disabled selected>Choose</option> -->
+                <option value="2024" selected>2024</option>
+                <option value="2025">2025</option>
+              </select>
+            </div>
+          </div>
+  
+          <!-- --------------------------- 2024 data--------------------------------------------------------------------- -->
+  
+  
+          <div class="table-container " id="table-2024">
+  
+  
+            <div class="report-body">
+              <!-- <div class="report-topic-heading">
+  
+                <h3 class="t-op">Name</h3>
+                <h3 class="t-op">Job Profile</h3>
+                <h3 class="t-op">Company</h3>
+                <h3 class="t-op">Profile</h3>
+              </div> -->
+  
+              <div class="items">
+                <div class=" item1">
+                  <h3 class="t-op heading">Name</h3>
+                  <h3 class="t-op-nextlvl one">Somnath Kaushik</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                </div>
+  
+                <div class="item1 i1">
+                  <h3 class="t-op heading">Job Profile</h3>
+                  <h3 class="t-op-nextlvl one">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                </div>
+  
+                <div class="item1 i2">
+                  <h3 class="t-op heading">Company</h3>
+                  <h3 class="t-op-nextlvl one">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+  
+  
+  
+                </div>
+  
+                <div class="item1 i2">
+                  <h3 class="t-op heading">Package</h3>
+                  <h3 class="t-op-nextlvl one">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+  
+  
+                </div>
+  
+  
+  
+              </div>
+            </div>
+          </div>
+  
+  
+          <!-- --------------------------- 2025 data--------------------------------------------------------------------- -->
+  
+  
+  
+          <div class="table-container hidden" id="table-2025">
+  
+  
+            <div class="report-body">
+              <div class="report-topic-heading">
+  
+                <h3 class="t-op">Name</h3>
+                <h3 class="t-op">Job Profile</h3>
+                <h3 class="t-op">Company</h3>
+                <h3 class="t-op">Profile</h3>
+              </div>
+  
+              <div class="items">
+                <div class=" item1">
+                  <h3 class="t-op-nextlvl one">Adarsh Pandey</h3>
+                  <h3 class="t-op-nextlvl">Aryan Dhaiya</h3>
+                  <h3 class="t-op-nextlvl">Dushyant Singh</h3>
+                  <h3 class="t-op-nextlvl">Dhruv Singh</h3>
+                  <h3 class="t-op-nextlvl">Ayush Mittal</h3>
+                  <h3 class="t-op-nextlvl">Gopal Chobey</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                  <h3 class="t-op-nextlvl">Name 1</h3>
+                </div>
+  
+                <div class="item1 i1">
+                  <h3 class="t-op-nextlvl one">Product Engineer</h3>
+                  <h3 class="t-op-nextlvl">Product Engineer</h3>
+                  <h3 class="t-op-nextlvl">Software Dev. Engineer</h3>
+                  <h3 class="t-op-nextlvl">Software Dev. Engineer</h3>
+                  <h3 class="t-op-nextlvl">Product Engineer</h3>
+                  <h3 class="t-op-nextlvl">Product Engineer</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                  <h3 class="t-op-nextlvl">SDE</h3>
+                </div>
+  
+                <div class="item1 i2">
+                  <h3 class="t-op-nextlvl one">Juspay</h3>
+                  <h3 class="t-op-nextlvl">Juspay</h3>
+                  <h3 class="t-op-nextlvl">Namma Yatri</h3>
+                  <h3 class="t-op-nextlvl">Namma Yatri</h3>
+                  <h3 class="t-op-nextlvl">Namma Yatri</h3>
+                  <h3 class="t-op-nextlvl">Namma Yatri</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+                  <h3 class="t-op-nextlvl">Google</h3>
+  
+  
+  
+                </div>
+  
+                <div class="item1 i2">
+                  <h3 class="t-op-nextlvl one">21 LPA</h3>
+                  <h3 class="t-op-nextlvl">21 LPA</h3>
+                  <h3 class="t-op-nextlvl">15 LPA</h3>
+                  <h3 class="t-op-nextlvl">15 LPA</h3>
+                  <h3 class="t-op-nextlvl">12+ LPA</h3>
+                  <h3 class="t-op-nextlvl">12+ LPA</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+                  <h3 class="t-op-nextlvl">1 Crore</h3>
+  
+  
+                </div>
+  
+  
+  
+              </div>
+            </div>
+          </div>
+        </div>
+        `;
+        document.getElementById('content').innerHTML = dashboardContent;
+      }
+
+      // Function to show Schools content
+      function Blogs() {
+        document.getElementById('content').innerHTML = `
+        <div class="container mx-auto py-8 px-4">
+          <h1 class="text-3xl font-bold text-red-600 mb-4">Welcome to Our Blog Page</h1>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="blogContainer">
+              <!-- Blog Posts will be added here dynamically -->
+          </div>
+      </div>
+      
+        `;
+      }
+
+
+      // Function to show Statistics content
+      function showStatistics() {
+        document.getElementById('content').innerHTML = `
+            <div class="p-8">
+                <h1 class="text-2xl font-bold">Statistics</h1>
+                <p>This is the content for the Statistics.</p>
+            </div>
+        `;
+      }
+
+      // Function to show Resources content
+      function showResources() {
+        document.getElementById('content').innerHTML = `
+            <div class="p-8">
+                <h1 class="text-2xl font-bold">Resources</h1>
+                <p>This is the content for the Resources.</p>
+            </div>
+        `;
+      }
+
+      // Function to show Contact Us content
+      function showContactUs() {
+        document.getElementById('content').innerHTML = `
+            <div class="p-8">
+                <h1 class="text-2xl font-bold">Contact Us</h1>
+                <p>This is the content for the Contact Us.</p>
+            </div>
+        `;
+      }
+
+      // Function to show Login content
+      function showLogin() {
+        document.getElementById('content').innerHTML = `
+            <div class="p-8">
+                <h1 class="text-2xl font-bold mb-8">Login</h1>
+                <p class="text-xl">You dont have permission to login!</p>
+            </div>
+        `;
+      }
+
+      // Function to show Theme content
+      function showTheme() {
+        const body = document.body;
+        body.classList.toggle('dark');
+
+        // Toggle dark theme on other elements with class 'darkable'
+        const elementsToToggle = document.querySelectorAll('.darkable');
+        elementsToToggle.forEach(function (element) {
+          element.classList.toggle('dark');
+        });
+      }
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
   </div>
 
   <script>
@@ -433,15 +712,12 @@
       table.classList.remove('hidden');
     }
   </script>
+
   <script>
-    function toggleOptions() {
-      var options = document.getElementById("options");
-      options.classList.toggle("hidden");
+    function redirectToAdminPage() {
+      window.location.href = './Blogs.html';
     }
   </script>
-
-
-
 
 
 

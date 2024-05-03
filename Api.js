@@ -1,9 +1,14 @@
 const express = require("express");
 const app = express();
 const bodyP = require("body-parser");
+const mongoose = require('mongoose');
 const compiler = require('compilex');
 const options = { static: true }
 compiler.init(options)
+
+const articleRouter = require('./routes/articleRoutes');
+
+mongoose.connect('mongodb://localhost:27017', {family: 4}).then(()=> console.log('Connected to DB')).catch((err) => console.log('error conecting ', err.message));
 
 app.use(bodyP.json());
 
@@ -62,8 +67,8 @@ app.use("/CodeCompiler.html", express.static("D:/Somnath Kaushik/Making_New_Cb_w
 const path = require('path');
 app.use(express.static(path.join(__dirname, "public"))); // Assuming style.css is in a 'public' folder
 
-
-
+// Routes
+app.use('/Article', articleRouter);
 
 
 // Your existing routes go here...
