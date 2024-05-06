@@ -172,137 +172,137 @@
 
 
 
-    <!-- -----------------------------HERO 2------------------------------------------ -->
+<!-- -----------------------------HERO 2------------------------------------------ -->
 
-    <h1 class="text-xl font-semibold text-center text-gray-600" id="languageTitle">Download the Free Resources</h1>
+<h1 class="text-xl font-semibold text-center text-gray-600" id="languageTitle">Download the Free Resources</h1>
 
-    <!-- Section with list of programming languages -->
-    <section class="container mx-auto py-8">
-        <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 align-middle">
-            <li class="language bg-white p-4 rounded-lg shadow-md transition duration-300 hover:bg-red-200 text-gray-600 text-center"
-                onclick="showPopup('JavaScript')">JavaScript</li>
-            <li class="language bg-white p-4 rounded-lg shadow-md transition duration-300 hover:bg-red-200 text-gray-600 text-center"
-                onclick="showPopup('Python')">Python</li>
-            <li class="language bg-white p-4 rounded-lg shadow-md transition duration-300 hover:bg-red-200 text-gray-600 text-center"
-                onclick="showPopup('Java')">Java</li>
-            <li class="language bg-white p-4 rounded-lg shadow-md transition duration-300 hover:bg-red-200 text-gray-600 text-center"
-                onclick="showPopup('C++')">C++</li>
-        </ul>
-    </section>
+<!-- Section with list of programming languages -->
+<section class="container mx-auto py-8">
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 align-middle">
+        <li class="language bg-white p-4 rounded-lg shadow-md transition duration-300 hover:bg-red-200 text-gray-600 text-center"
+            onclick="showPopup('JavaScript')">JavaScript</li>
+        <li class="language bg-white p-4 rounded-lg shadow-md transition duration-300 hover:bg-red-200 text-gray-600 text-center"
+            onclick="showPopup('Python')">Python</li>
+        <li class="language bg-white p-4 rounded-lg shadow-md transition duration-300 hover:bg-red-200 text-gray-600 text-center"
+            onclick="showPopup('Java')">Java</li>
+        <li class="language bg-white p-4 rounded-lg shadow-md transition duration-300 hover:bg-red-200 text-gray-600 text-center"
+            onclick="showPopup('C++')">C++</li>
+    </ul>
+</section>
 
-    <!-- Popup for viewing notes -->
-    <div class="z-30 notes-popup fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
-        <div class="bg-white p-8 rounded-lg shadow-md max-w-md">
-            <div class="flex justify-between items-center mb-4 ">
-                <h2 class="text-xl font-semibold" id="languageTitle">JavaScript Notes</h2>
-                <h3>(Preview Sample Page)</h3>
-                <button class="close-btn" onclick="closePopup()">
-                    <svg class="w-6 h-6 text-gray-700 hover:text-gray-900" fill="none" stroke="currentColor"
-                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
-                        </path>
-                    </svg>
-                </button>
-            </div>
-            <div class="pdf-viewer hidden" id="pdfViewer"></div>
-            <div class="mt-4 flex justify-between mt-16">
-                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mx-5"
-                    onclick="viewNotes()">View
-                    Notes</button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mx-5"
-                    onclick="downloadPDF()">Download PDF</button>
+<!-- Popup for viewing notes -->
+<div class="z-30 notes-popup fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
+    <div class="bg-white p-8 rounded-lg shadow-md max-w-md">
+        <div class="flex justify-between items-center mb-4 ">
+            <h2 class="text-xl font-semibold" id="popupLanguageTitle">JavaScript Notes</h2>
+            <h3>(Preview Sample Page)</h3>
+            <button class="close-btn" onclick="closePopup()">
+                <svg class="w-6 h-6 text-gray-700 hover:text-gray-900" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <div class="pdf-viewer hidden" id="pdfViewer"></div>
+        <div class="mt-4 flex justify-between mt-16">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mx-5"
+                onclick="viewNotes()">View
+                Notes</button>
+            <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mx-5"
+                onclick="downloadPDF()">Download PDF</button>
 
 
-            </div>
         </div>
     </div>
+</div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-    <script>
-        var pdfDoc = null;
-        var pageNum = 1;
-        var pageRendering = false;
-        var canvas = document.createElement('canvas');
-        var ctx = canvas.getContext('2d');
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+<script>
+    var pdfDoc = null;
+    var pageNum = 1;
+    var pageRendering = false;
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
 
-        function showPopup(language) {
-            var popup = document.querySelector('.notes-popup');
-            popup.style.display = 'flex';
-            // popup.style.width = "300px";
-            var heading = document.getElementById('languageTitle');
-            heading.textContent = language + ' Notes';
-        }
+    function showPopup(language) {
+        var popup = document.querySelector('.notes-popup');
+        popup.style.display = 'flex';
+        // popup.style.width = "300px";
+        var heading = document.getElementById('popupLanguageTitle');
+        heading.textContent = language + ' Notes';
+    }
 
-        function closePopup() {
-            var popup = document.querySelector('.notes-popup');
-            popup.style.display = 'none';
-            location.reload();
-        }
+    function closePopup() {
+        var popup = document.querySelector('.notes-popup');
+        popup.style.display = 'none';
+        location.reload();
+    }
 
-        function viewNotes() {
-            var pdfViewer = document.getElementById('pdfViewer');
+    function viewNotes() {
+        var pdfViewer = document.getElementById('pdfViewer');
 
-            pdfViewer.classList.remove('hidden');
+        pdfViewer.classList.remove('hidden');
 
-            pdfViewer.innerHTML = '';
+        pdfViewer.innerHTML = '';
 
-            var url = getPDFUrl(); // Get URL of the PDF document based on selected language
-            pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
-                pdfDoc = pdfDoc_;
-                renderPage(pageNum);
+        var url = getPDFUrl(); // Get URL of the PDF document based on selected language
+        pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
+            pdfDoc = pdfDoc_;
+            renderPage(pageNum);
+        });
+
+    }
+
+    function downloadPDF() {
+        var url = getPDFUrl(); // Get URL of the PDF document based on selected language
+        var filename = document.getElementById('popupLanguageTitle').textContent.trim().replace(' ', '_') + '.pdf';
+        fetch(url)
+            .then(response => response.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(new Blob([blob]));
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute('download', filename);
+                document.body.appendChild(link);
+                link.click();
+                link.parentNode.removeChild(link);
             });
+    }
 
-        }
-
-        function downloadPDF() {
-            var url = getPDFUrl(); // Get URL of the PDF document based on selected language
-            var filename = document.getElementById('languageTitle').textContent.trim().replace(' ', '_') + '.pdf';
-            fetch(url)
-                .then(response => response.blob())
-                .then(blob => {
-                    const url = window.URL.createObjectURL(new Blob([blob]));
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.setAttribute('download', filename);
-                    document.body.appendChild(link);
-                    link.click();
-                    link.parentNode.removeChild(link);
-                });
-        }
-
-        function renderPage(num) {
-            pageRendering = true;
-            pdfDoc.getPage(num).then(function (page) {
-                var viewport = page.getViewport({ scale: 1 });
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
-                var renderContext = {
-                    canvasContext: ctx,
-                    viewport: viewport
-                };
-
-                var renderTask = page.render(renderContext);
-                renderTask.promise.then(function () {
-                    pageRendering = false;
-                    var pdfViewer = document.getElementById('pdfViewer');
-                    pdfViewer.appendChild(canvas);
-                });
-            });
-
-        }
-
-        function getPDFUrl() {
-            var language = document.getElementById('languageTitle').textContent.split(' ')[0]; // Get the selected language
-            // Map language to respective PDF URLs (Replace with your actual PDF URLs)
-            var pdfUrls = {
-                'JavaScript': '../Resource_Pdfs/Booths to Stack .pdf',
-                'Python': './E-Business.pdf',
-                'Java': './LOGIC LOADERS-converted.pdf',
-                'C++': './Project Management For Managers.pdf'
+    function renderPage(num) {
+        pageRendering = true;
+        pdfDoc.getPage(num).then(function (page) {
+            var viewport = page.getViewport({ scale: 1 });
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+            var renderContext = {
+                canvasContext: ctx,
+                viewport: viewport
             };
-            return pdfUrls[language];
-        }
-    </script>
+
+            var renderTask = page.render(renderContext);
+            renderTask.promise.then(function () {
+                pageRendering = false;
+                var pdfViewer = document.getElementById('pdfViewer');
+                pdfViewer.appendChild(canvas);
+            });
+        });
+
+    }
+
+    function getPDFUrl() {
+        var language = document.getElementById('popupLanguageTitle').textContent.split(' ')[0]; // Get the selected language
+        // Map language to respective PDF URLs (Replace with your actual PDF URLs)
+        var pdfUrls = {
+            'JavaScript': '../Resource_Pdfs/Booths to Stack .pdf',
+            'Python': '../Resource_Pdfs/register microoperations_organized.pdf',
+            'Java': '../Resource_Pdfs/physics notes.pdf',
+            'C++': '../Resource_Pdfs/karan CO notes 1.pdf'
+        };
+        return pdfUrls[language];
+    }
+</script>
 
 
 
@@ -410,7 +410,7 @@
         <h1 class="text-center sm:text-3xl text-4xl  font-bold title-font mb-4 text-gray-900">Projects</h1>
         <div class="container px-5 py-24 mx-auto">
 
-            <div class="flex flex-wrap -m-4 ">
+            <div class="flex flex-wrap -m-4 mb-8">
                 <div class="lg:w-1/4 md:w-1/2 p-4 w-full hover:bg-red-200">
                     <a class="block relative h-48 rounded overflow-hidden">
                         <img alt="ecommerce" class="object-cover object-center w-full h-full block"

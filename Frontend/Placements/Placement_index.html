@@ -192,7 +192,7 @@
               </button>
             </li>
             <li class="border-white border-2">
-              <button class="nav-option option2" onclick="redirectToAdminPage()">
+              <button class="nav-option option2" onclick="Blogs()">
                 <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/9.png" class="nav-img"
                   alt="blogs">
                 <h3>Blogs</h3>
@@ -238,10 +238,27 @@
 
     </div>
     <header>
-      <div class="logosec">
-        <img src="../Images/arrow.png" class="icn menuicn" id="menuicn" alt="menu-icon">
-      </div>
+      <!-- <div class="logosec"> -->
+        <!-- <img src="../Images/arrow.png" class="icn menuicn" id="menuicn" alt="menu-icon"> -->
+        <div class="hamburger-menu icn menuicn logosec" id="menuicn" alt="menu-icon">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      <!-- </div> -->
+      
     </header>
+
+    <script>
+      const hamburgerMenu = document.querySelector('.hamburger-menu');
+  
+      hamburgerMenu.addEventListener('click', function() {
+        this.classList.toggle('open');
+      });
+    </script>
+
+
+
 
 
 
@@ -623,14 +640,36 @@
       // Function to show Schools content
       function Blogs() {
         document.getElementById('content').innerHTML = `
-        <div class="container mx-auto py-8 px-4">
-          <h1 class="text-3xl font-bold text-red-600 mb-4">Welcome to Our Blog Page</h1>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="blogContainer">
+        <div class="container mx-auto py-8 px-4 ">
+          <h1 class="text-3xl font-bold text-red-600 mb-24 text-center">Welcome to Our Blog Page</h1>
+          <div class="flex flex-wrap gap-4 " id="blogContainer">
               <!-- Blog Posts will be added here dynamically -->
           </div>
       </div>
-      
         `;
+        // Fetch data from the API and render it
+        fetch('http://localhost:8000/Article')
+            .then(response => response.json())
+            .then(data => {
+                const blogContainer = document.getElementById('blogContainer');
+                
+                data.data.forEach(blog => {
+                    const blogDiv = document.createElement('div');
+                    blogDiv.classList.add('bg-red-200', 'rounded', 'p-4' ,'w-40%', 'h-auto','max-w-48', 'max-h-full');
+                    blogDiv.innerHTML = `
+                        <img src="${blog.image}" alt="${blog.title}" class="w-full h-auto mb-4 rounded" style="max-width: 100%; max-height: 300px;">
+                        <h2 class="text-xl font-bold mb-2">${blog.title}</h2>
+                        <p class="text-gray-700 mb-2">${blog.content}</p>
+                        <p class="text-gray-600 font-bold">Author: ${blog.author}</p>
+                    `;
+
+                    
+                    blogContainer.appendChild(blogDiv);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
       }
 
 
@@ -690,14 +729,6 @@
 
 
 
-
-
-
-
-
-
-
-
   </div>
 
   <script>
@@ -713,19 +744,11 @@
     }
   </script>
 
-  <script>
-    function redirectToAdminPage() {
-      window.location.href = './Blogs.html';
-    }
-  </script>
 
 
 
 
-
-
-
-
+  
 
 
 
@@ -735,69 +758,69 @@
 
   <!-- --------------------Footer------------------------ -->
 
-  <footer class="text-gray-300 body-font footer bg-gray-300 ">
+  <footer class="text-gray-300 body-font footer bg-gray-300 darkable ">
     <div
-      class="justify-between container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col -mt-20">
+      class="justify-between container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col -mt-20 ">
       <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left -mt-20">
         <a class="flex-wrap title-font font-medium items-center md:justify-start justify-center text-gray-900 ">
           <img class="col-span-1 max-h-12   object-contain " src="../Images/cbLogo.jpg" alt="CodingBlocksGLAU"
             width="158" height="48">
-          <span class="ml-3 text-xl">Coding Blocks GLAU</span>
+          <span class="ml-3 text-xl darkable">Coding Blocks GLAU</span>
         </a>
-        <p class="mt-2 text-sm text-gray-500">Code Like A Boss With Coding Blocks.</p>
+        <p class="mt-2 text-sm text-gray-500 darkable">Code Like A Boss With Coding Blocks.</p>
       </div>
       <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center justify-end">
 
         <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Pages</h2>
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 darkable">Pages</h2>
           <footer class="list-none mb-10">
             <li>
-              <a href="../Home/index.html" class="text-gray-600 hover:text-red-600">Home</a>
+              <a href="../Home/index.html" class="text-gray-600 hover:text-red-600 darkable">Home</a>
             </li>
             <li>
-              <a href="../Courses/courses_index.html" class="text-gray-600 hover:text-red-600">Courses</a>
+              <a href="../Courses/courses_index.html" class="text-gray-600 hover:text-red-600 darkable">Courses</a>
             </li>
             <li>
-              <a href="../Resources/Resources.html" class="text-gray-600 hover:text-red-600">Resources</a>
+              <a href="../Resources/Resources.html" class="text-gray-600 hover:text-red-600 darkable">Resources</a>
             </li>
             <li>
-              <a href="../Contact/Contact.html" class="text-gray-600 hover:text-red-600">Contact Us</a>
+              <a href="../Contact/Contact.html" class="text-gray-600 hover:text-red-600 darkable">Contact Us</a>
             </li>
             <li>
-              <a href="#" class="text-gray-600 hover:text-red-600">Placements</a>
+              <a href="#" class="text-gray-600 hover:text-red-600 darkable">Placements</a>
             </li>
             <li>
-              <a href="/CodeCompiler.html" class="text-gray-600 hover:text-red-600">Compiler</a>
+              <a href="/CodeCompiler.html" class="text-gray-600 hover:text-red-600 darkable">Compiler</a>
             </li>
           </footer>
         </div>
         <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Social Links</h2>
-          <footer class="list-none mb-10">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 darkable">Social Links</h2>
+          <footer class="list-none mb-10 ">
             <li>
-              <a class="text-gray-600 hover:text-red-600">First Link</a>
+              <a class="text-gray-600 hover:text-red-600 darkable">First Link</a>
             </li>
             <li>
-              <a class="text-gray-600 hover:text-red-600">Second Link</a>
+              <a class="text-gray-600 hover:text-red-600 darkable">Second Link</a>
             </li>
             <li>
-              <a class="text-gray-600 hover:text-red-600">Third Link</a>
+              <a class="text-gray-600 hover:text-red-600 darkable">Third Link</a>
             </li>
             <li>
-              <a class="text-gray-600 hover:text-red-600">Fourth Link</a>
+              <a class="text-gray-600 hover:text-red-600 darkable">Fourth Link</a>
             </li>
           </footer>
         </div>
       </div>
     </div>
     <!-- <hr class="h-px my-8 bg-gray-100 border-0 dark:bg-gray-900 -mt-16"> -->
-    <div class="mx-5 -mt-20 italic">
-      <h1 class="text-black">Important Links</h1>
+    <div class="mx-5 -mt-20 italic ">
+      <h1 class="text-black darkable">Important Links</h1>
       <d>
-        <h3 class="text-sm">
-          <d>1. CODING COURSES FOR BEGINNERS:</d>
+        <h3 class="text-sm darkable">
+          <d class="darkable">1. CODING COURSES FOR BEGINNERS:</d>
         </h3>
-        <p class="mx-10 text-xs">Data Structures and Algorithms in C++ | Data Structures and Algorithms in Java|
+        <p class="mx-10 text-xs darkable">Data Structures and Algorithms in C++ | Data Structures and Algorithms in Java|
           Data Structures and Algorithms in Python| Python for Data science| Master Interview prep with C++|
           Master Interview prep with Java| Master Non Coding subjects for Interview drives| Master Preperation
           for FAANG| Dynamic Programming - Must Do Problem Set!| Data Structures in Real Life Projects| Graph
@@ -805,20 +828,20 @@
           Selenium with Python| Digital Marketing course| Java for Class XII Board practicals| C++ for Class
           XII boards</p>
 
-        <h3 class="text-sm">
-          <d>2. ADVANCED CODING COURSES:</d>
+        <h3 class="text-sm darkable">
+          <d class="darkable">2. ADVANCED CODING COURSES:</d>
         </h3>
-        <p class="mx-10 text-xs">Master Competitive programming | Master Full stack Web development using
+        <p class="mx-10 text-xs darkable">Master Competitive programming | Master Full stack Web development using
           node.JS(MERN) | Master Front end Web development | Master Backend Web development using node.JS |
           Master Android app development using Kotlin |Master Data science and Machine learning | Master
           Machine learning</p>
       </d>
     </div>
 
-    <div class="bg-gray-100">
+    <div class="bg-gray-100 darkable">
       <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row text-center">
-        <p class="text-gray-500 text-sm text-center sm:text-left">Made with ❤️
-          <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1"
+        <p class="text-gray-500 text-sm text-center sm:text-left darkable">Made with ❤️
+          <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1 darkable"
             target="_blank">by Somnath Kaushik</a>
         </p>
         <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">

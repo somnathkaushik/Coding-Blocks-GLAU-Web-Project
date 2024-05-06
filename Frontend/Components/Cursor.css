@@ -369,6 +369,12 @@
   button{
     cursor: none !important;
   }
+  ul{
+    cursor: none !important;
+  }
+  li{
+    cursor: none !important;
+  }
 
 
 

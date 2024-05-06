@@ -1,24 +1,15 @@
-#codeSection{
+#codeSection {
     margin-top: -60rem;
 }
 
-
-
-*{
+* {
     margin: 0 0;
-    
+
 }
 
 body {
     position: relative;
-    /* cursor: none; */
     height: 100%;
     width: 100%;
-    /* overflow-wrap: normal; */
-    
-  }
 
-#hii{
-    color: rgb(0, 255, 170);
-    font-size: xx-large;
 }

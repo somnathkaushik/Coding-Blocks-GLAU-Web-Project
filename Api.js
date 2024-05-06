@@ -6,85 +6,124 @@ const compiler = require('compilex');
 const options = { static: true }
 compiler.init(options)
 
+
 const articleRouter = require('./routes/articleRoutes');
 
 mongoose.connect('mongodb://localhost:27017', {family: 4}).then(()=> console.log('Connected to DB')).catch((err) => console.log('error conecting ', err.message));
 
 app.use(bodyP.json());
 
-// Serve the static files from the "codemirror-5.65.16" directory
-app.use("/codemirror-5.65.16", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/codemirror-5.65.16"));
 
-// Serve the static files from the "Frontend" directory
-app.use("/Frontend", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend"));
-
-
-// Serve the static files from the "Components" directory within the "Frontend" directory
-app.use("/", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend"));
-
-
-// Serve the static files from the "Components" directory within the "Frontend" directory
-app.use("/Home", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Home"));
-
-// Serve the static files from the "Components" directory within the "Frontend" directory
-app.use("/Components", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Components"));
-
-// Serve the static files from the "Components" directory within the "Frontend" directory
-app.use("/Contact", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Contact"));
-
-// Serve the static files from the "Components" directory within the "Frontend" directory
-app.use("/Resources", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Resources"));
-
-// Serve the static files from the "Components" directory within the "Frontend" directory
-app.use("/Courses", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Courses"));
-
-// Serve the static files from the "Components" directory within the "Frontend" directory
-app.use("/Resource_Pdfs", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Resource_Pdfs"));
-
-
-// Serve the static files from the "Components" directory within the "Frontend" directory
-app.use("/Images", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Images"));
-
-// Serve the static files from the "Components" directory within the "Frontend" directory
-app.use("/Placements", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Placements"));
-
-// Serve the static files from the "public" directory
-app.use("/public", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/public"));
-
-
-// Serve the static files from the "public" directory
-app.use("/output.css", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/output.css"));
-
-
-// Serve the static files from the "public" directory
-app.use("/tailwind.config.js", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/tailwind.config.js"));
-
-// Serve the static files from the "public" directory
-app.use("/CodeCompiler.html", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/CodeCompiler.html"));
-
-
-// Serve static files from the "public" folder within the application directory
 const path = require('path');
-app.use(express.static(path.join(__dirname, "public"))); // Assuming style.css is in a 'public' folder
+// Serve static assets
+app.use('/public' , express.static(path.join(__dirname, 'public')));
+app.use('/codemirror-5.65.16', express.static(path.join(__dirname, 'codemirror-5.65.16')));
+app.use('/Frontend', express.static(path.join(__dirname, 'Frontend')));
+app.use('/Home', express.static(path.join(__dirname, 'Frontend', 'Home')));
+app.use('/Components', express.static(path.join(__dirname, 'Frontend', 'Components')));
+app.use('/Contact', express.static(path.join(__dirname, 'Frontend', 'Contact')));
+app.use('/Resources', express.static(path.join(__dirname, 'Frontend', 'Resources')));
+app.use('/Courses', express.static(path.join(__dirname, 'Frontend', 'Courses')));
+app.use('/Resource_Pdfs', express.static(path.join(__dirname, 'Frontend', 'Resource_Pdfs')));
+app.use('/Images', express.static(path.join(__dirname, 'Frontend', 'Images')));
+app.use('/Placements', express.static(path.join(__dirname, 'Frontend', 'Placements')));
+app.use('/output.css', express.static(path.join(__dirname, 'Frontend', 'output.css')));
+app.use('/tailwind.config.js', express.static(path.join(__dirname, 'tailwind.config.js')));
+app.use('/CodeCompiler.html', express.static(path.join(__dirname, 'CodeCompiler.html')));
 
 // Routes
+// const articleRouter = require('./routes/article');
 app.use('/Article', articleRouter);
 
-
-// Your existing routes go here...
-
-app.get("/", function (req, res) {
-    compiler.flush(function(){
-        console.log("deleted");
-    })
-    res.sendFile("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Home/index.html");
+// Route Handlers
+app.get('/', function (req, res) {
+    compiler.flush(function () {
+        console.log('deleted');
+    });
+    res.sendFile(path.join(__dirname, 'Frontend', 'Home', 'index.html'));
 });
 
-// Route for the contact page
 app.get('/contact', (req, res) => {
     res.sendFile(path.join(__dirname, 'Frontend', 'Contact.html'));
 });
 
+// Error Handling
+app.use(function (err, req, res, next) {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
+
+
+
+
+
+
+
+
+
+// app.use("/codemirror-5.65.16", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/codemirror-5.65.16"));
+
+
+// app.use("/Frontend", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend"));
+
+
+
+// app.use("/", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend"));
+
+
+
+// app.use("/Home", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Home"));
+
+// app.use("/Components", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Components"));
+
+// app.use("/Contact", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Contact"));
+
+// app.use("/Resources", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Resources"));
+
+
+// app.use("/Courses", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Courses"));
+
+
+// app.use("/Resource_Pdfs", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Resource_Pdfs"));
+
+
+// app.use("/Images", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Images"));
+
+// app.use("/Placements", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Placements"));
+
+// app.use("/public", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/public"));
+
+
+// app.use("/output.css", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/output.css"));
+
+
+// app.use("/tailwind.config.js", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/tailwind.config.js"));
+
+// app.use("/CodeCompiler.html", express.static("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/CodeCompiler.html"));
+
+
+
+// // Routes
+// app.use('/Article', articleRouter);
+
+
+
+
+// app.get("/", function (req, res) {
+//     compiler.flush(function(){
+//         console.log("deleted");
+//     })
+//     res.sendFile("D:/Somnath Kaushik/Making_New_Cb_web/Coding-Blocks-GLAU-Web-Project/Frontend/Home/index.html");
+// });
+
+
+// app.get('/contact', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'Frontend', 'Contact.html'));
+// });
+
+
+// const path = require('path');
+// app.use(express.static(path.join(__dirname, "public"))); // Assuming style.css is in a 'public' folder
 
 
 app.post("/compile", function (req, res) {
