@@ -9,7 +9,7 @@ compiler.init(options)
 
 const articleRouter = require('./routes/articleRoutes');
 
-mongoose.connect('mongodb://localhost:27017', {family: 4}).then(()=> console.log('Connected to DB')).catch((err) => console.log('error conecting ', err.message));
+mongoose.connect('mongodb+srv://somnath:CBpassword123@cluster0.yrz7unj.mongodb.net/blogs',{family:4}).then(()=> console.log('Connected to DB')).catch((err) => console.log('error conecting ', err.message));
 
 app.use(bodyP.json());
 
@@ -32,7 +32,7 @@ app.use('/tailwind.config.js', express.static(path.join(__dirname, 'tailwind.con
 app.use('/CodeCompiler.html', express.static(path.join(__dirname, 'CodeCompiler.html')));
 
 // Routes
-// const articleRouter = require('./routes/article');
+// const articleRouter = require('./routes/article'); 
 app.use('/Article', articleRouter);
 
 // Route Handlers
@@ -237,5 +237,4 @@ app.post("/compile", function (req, res) {
     // });
 })
 
-app.listen(8000);
-console.log('Server is running on port  8000');
+app.listen(8000,()=>{console.log("http://127.0.0.1:8000")});

@@ -11,5 +11,5 @@ const ArticleSchema = new mongoose.Schema({
     image: { type: String, required:true}
 });
 
-const Article = mongoose.model('Article', ArticleSchema);
+const Article = mongoose.model('CB', ArticleSchema);
 module.exports = Article;
